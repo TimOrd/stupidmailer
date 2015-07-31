@@ -1,0 +1,15 @@
+{
+	"name": "kevdotbadger/stupidmailer",
+	"version": "0.1",
+	"description": "A simple wrapper for swiftmailer",
+	"autoload": {
+		"psr-4": {
+			"kevdotbadger\\StupidMailer\\": "src/"
+		}
+	},
+	"require": {
+		"php": ">=5.3.0",
+		"swiftmailer/swiftmailer": "@stable"
+	},
+	"license": "GNU"
+}

@@ -22,7 +22,7 @@ class Mailer {
 	}
 	
 	public function setRecipient($recipient){
-		$this->recipient[] = $recipient;
+		$this->recipient[key($recipient)] = $recipient[key($recipient)];
 		
 		return $this;
 	}
@@ -46,9 +46,7 @@ class Mailer {
 		
 		$this->message->setFrom($this->from);
 		
-		foreach( $this->recipient as $recipient){
-			$this->message->setTo($recipient);
-		}
+		$this->message->setTo($this->recipient);
 		
 		$this->message->setSubject($this->subject);
 		$this->message->setBody($this->content);

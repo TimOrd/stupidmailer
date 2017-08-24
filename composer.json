@@ -1,6 +1,6 @@
 {
 	"name": "kevdotbadger/stupidmailer",
-	"version": "0.3",
+	"version": "0.4",
 	"description": "A simple wrapper for swiftmailer",
 	"autoload": {
 		"psr-4": {

@@ -13,6 +13,7 @@ class Mailer {
 	private $recipients = array();
 	private $subject;
 	private $content;
+	private $contentType = 'text/plain';
 	private $message;
 	
 	/**
@@ -85,6 +86,19 @@ class Mailer {
 	}
 	
 	/**
+	* Set content type to an email
+	*
+	* @param string $contentType 
+	* @return Mailer
+	* @author Tim Ord
+	*/
+	public function setContentType($contentType){
+		$this->contentType = $contentType;
+		
+		return $this;
+	}
+
+	/**
 	* Send email
 	*
 	* @return boolean
@@ -101,6 +115,7 @@ class Mailer {
 				
 		$this->message->setSubject($this->subject);
 		$this->message->setBody($this->content);
+		$this->message->setContentType($this->contentType);
 		
 		$mailer = Swift_Mailer::newInstance($this->transport);
 				
